@@ -5,11 +5,17 @@ let errorBox = document.getElementById("errorBox");
 
 let jwt = sessionStorage.getItem("token");
 
+let firstTryCheck = true;
+
 function toggleSubmitBtn() {
     let emailInput = email.value;
     let passwordInput = password.value;
 
-    errorBox.style.display = "none";
+    if(firstTryCheck == false) {
+        errorBox.style.right = "0";
+        errorBox.classList.add("flyOut");
+        errorBox.classList.remove("flyIn");
+    }
 
     if(emailInput != "" && passwordInput != "") {
         submitBtn.disabled = false;
@@ -25,7 +31,7 @@ function toggleSubmitBtn() {
 
     submitBtn.onclick = function () {
         login(emailInput, passwordInput);
-      };
+    };
 }
 
 function login(emailInput, passwordInput) {
@@ -46,7 +52,10 @@ function login(emailInput, passwordInput) {
         data = "ErrorMsg";
         if (data == "ErrorMsg") {
           jwt = null;
-          errorBox.style.display = "block";
+          errorBox.style.right = "-27vw";
+          errorBox.classList.remove("flyOut");
+          errorBox.classList.add("flyIn");
+          firstTryCheck = false;
         } else {
           jwt = `Bearer ${data}`;
           sessionStorage.setItem("token", jwt);
