@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+body {
+  width: 100vw;
+  overflow: hidden;
+}
+
 .navbar {
   margin-top: 5vh;
   display: flex;
