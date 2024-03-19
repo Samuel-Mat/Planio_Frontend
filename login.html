@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-box">
+      <div class="login-title">Login</div>
+      <div class="login-input-container">
+        <input
+          class="login-input"
+          id="emailInput"
+          placeholder="E-Mail"
+          type="email"
+          oninput="toggleSubmitBtn()"
+        />
+        <input
+          class="login-input"
+          id="passwordInput"
+          placeholder="Password"
+          type="password"
+          oninput="toggleSubmitBtn()"
+        />
+      </div>
+      <button class="login-submit" id="submitBtn" disabled onclick="login()">
+        Submit
+      </button>
+    </div>
+    <div class="error-box" id="errorBox">
+      Sie haben falsche Anmeldedaten eingegeben...
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>
