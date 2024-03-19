@@ -168,7 +168,7 @@ td {
   visibility: hidden;
   flex-direction: column;
   width: 30vw;
-  height: 35vh;
+  height: 39vh;
   border-color: white;
   border-radius: 1px;
   border-style: solid;
@@ -230,7 +230,7 @@ td {
   0% {
     background-color: rgb(68, 66, 66);
   }
-  50% {
+  100% {
     background-color: rgb(121, 114, 110);
   }
 }
