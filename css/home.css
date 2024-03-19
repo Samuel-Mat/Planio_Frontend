@@ -113,12 +113,30 @@ td {
   border-bottom: 1px solid white;
 }
 
+.add_class {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  width: 30vw;
+  height: 18vh;
+  border-color: white;
+  border-radius: 1px;
+  border-style: solid;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 20px;
+}
+
 .add_person {
   display: flex;
   visibility: hidden;
   flex-direction: column;
   width: 30vw;
-  height: 28vh;
+  height: 32vh;
   border-color: white;
   border-radius: 1px;
   border-style: solid;
@@ -133,6 +151,28 @@ td {
 
 .add_person h2 {
   border-bottom: 1px solid white;
+}
+
+.add_booking {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  width: 30vw;
+  height: 32vh;
+  border-color: white;
+  border-radius: 1px;
+  border-style: solid;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 20px;
+}
+
+.add_booking:hover {
+  cursor: pointer;
 }
 
 .button_row {

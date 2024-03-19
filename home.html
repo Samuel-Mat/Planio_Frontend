@@ -134,14 +134,66 @@
       <h2>Add</h2>
       <p onclick="ShowAddRoom()" class="prompt_link">New Room</p>
       <p onclick="ShowAddPerson()" class="prompt_link">New Person</p>
-      <p class="prompt_link">New Class</p>
-      <p class="prompt_link">New Booking</p>
+      <p onclick="ShowAddClass()" class="prompt_link">New Class</p>
+      <p onclick="ShowAddBooking()" class="prompt_link">New Booking</p>
       <p class="highlight_button" onclick="CloseAdd()">Close</p>
     </div>
 
     <div class="prompt add_room" id="addRoom">
       <h2>Add Room</h2>
       <input type="text" placeholder="Room name..." class="text_input" />
+      <div class="button_row">
+        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <p class="highlight_button" onclick="CloseAddAll()">Close</p>
+      </div>
+    </div>
+
+    <div class="prompt add_class" id="addClass">
+      <h2>Add Class</h2>
+      <input type="text" placeholder="Class name..." class="text_input" />
+      <div class="button_row">
+        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <p class="highlight_button" onclick="CloseAddAll()">Close</p>
+      </div>
+    </div>
+
+    <div class="prompt add_booking" id="addBooking">
+      <h2>Add Booking</h2>
+      <input type="text" placeholder="Subject..." class="text_input" />
+      <select id="from" class="selectmenu" name="From">
+        <option selected disabled>From</option>
+        <option value="07:45">07:45</option>
+        <option value="08:35">08:35</option>
+        <option value="09:30">09:30</option>
+        <option value="10:30">10:30</option>
+        <option value="11:25">11:25</option>
+        <option value="12:15">12:15</option>
+        <option value="13:05">13:05</option>
+        <option value="14:00">14:00</option>
+        <option value="14:55">14:55</option>
+        <option value="15:50">15:50</option>
+        <option value="16:45">16:45</option>
+        <option value="17:35">17:35</option>
+      </select>
+      <select id="to" class="selectmenu">
+        <option selected disabled>To</option>
+        <option value="07:45">07:45</option>
+        <option value="08:35">08:35</option>
+        <option value="09:30">09:30</option>
+        <option value="10:30">10:30</option>
+        <option value="11:25">11:25</option>
+        <option value="12:15">12:15</option>
+        <option value="13:05">13:05</option>
+        <option value="14:00">14:00</option>
+        <option value="14:55">14:55</option>
+        <option value="15:50">15:50</option>
+        <option value="16:45">16:45</option>
+        <option value="17:35">17:35</option>
+      </select>
+      <select id="room" class="selectmenu">
+        <option selected disabled>Room</option>
+        <option value="TestRoom">TestRoom</option>
+      </select>
       <div class="button_row">
         <p class="highlight_button" onclick="CloseAddAll()">Create</p>
         <p class="highlight_button" onclick="CloseAddAll()">Close</p>
@@ -157,6 +209,9 @@
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
         <option value="admin">Admin</option>
+      </select>
+      <select id="class" class="selectmenu">
+        <option value="i21b">I21B</option>
       </select>
       <div class="button_row">
         <p class="highlight_button" onclick="CloseAddAll()">Create</p>

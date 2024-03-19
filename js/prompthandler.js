@@ -22,6 +22,20 @@ function ShowAddPerson() {
   addRoomPrompt.style.visibility = "Visible";
 }
 
+function ShowAddClass() {
+  CloseAdd();
+
+  const addRoomPrompt = document.getElementById("addClass");
+  addRoomPrompt.style.visibility = "Visible";
+}
+
+function ShowAddBooking() {
+  CloseAdd();
+
+  const addRoomPrompt = document.getElementById("addBooking");
+  addRoomPrompt.style.visibility = "Visible";
+}
+
 function CloseAdd() {
   const addPrompt = document.getElementById("addPrompt");
   addPrompt.style.visibility = "Hidden";
