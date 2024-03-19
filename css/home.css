@@ -1,0 +1,176 @@
+* {
+  background-color: rgb(23, 22, 22);
+  font-family: poppins;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  margin-top: 5vh;
+  margin-left: 10vw;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.navbar li {
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+  margin-right: 20vw;
+}
+
+.home_title {
+  margin-top: 5vh;
+  color: white;
+  margin-left: 5vw;
+  border-bottom: 1px solid white;
+  width: 90vw;
+}
+
+.schedule {
+  margin-left: 5vw;
+  width: 90vw;
+  color: white;
+  border-collapse: collapse;
+}
+
+.schedule th,
+td {
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  font-weight: 200;
+}
+
+.schedule_row_titles th {
+  font-weight: 800;
+  border-width: 2px;
+}
+
+.schedule_time {
+  font-weight: 800;
+}
+
+.nav_img {
+  width: 3vw;
+}
+
+.nav_img:hover {
+  cursor: pointer;
+}
+
+.text_input {
+  color: white;
+  border: none;
+  background-color: rgb(68, 66, 66);
+  border-radius: 10px;
+  padding: 5px;
+  width: 60%;
+  margin-bottom: 0.5vh;
+}
+.add_something {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  width: 30vw;
+  height: 30vh;
+  border-color: white;
+  border-radius: 1px;
+  border-style: solid;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 20px;
+}
+
+.add_something h2 {
+  border-bottom: 1px solid white;
+}
+
+.add_room {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  width: 30vw;
+  height: 18vh;
+  border-color: white;
+  border-radius: 1px;
+  border-style: solid;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 20px;
+}
+
+.add_room h2 {
+  border-bottom: 1px solid white;
+}
+
+.add_person {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  width: 30vw;
+  height: 28vh;
+  border-color: white;
+  border-radius: 1px;
+  border-style: solid;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 20px;
+}
+
+.add_person h2 {
+  border-bottom: 1px solid white;
+}
+
+.button_row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1vh;
+}
+
+.highlight_button {
+  color: white;
+  padding: 5px;
+  border-style: solid;
+  border-color: rgb(68, 66, 66);
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  width: 20%;
+}
+
+.highlight_button:hover {
+  cursor: pointer;
+}
+
+.prompt_link:hover {
+  cursor: pointer;
+}
+
+.selectmenu {
+  color: white;
+  width: 60%;
+  padding: 5px;
+  margin-top: 2vh;
+}
+
+.selectmenu:hover {
+  cursor: pointer;
+}

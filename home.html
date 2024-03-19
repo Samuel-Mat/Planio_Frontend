@@ -3,7 +3,166 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar">
+      <li><img src="./pics/logout.svg" class="nav_img" /></li>
+      <li>PlanioLogo</li>
+      <li onclick="ShowAddPrompt()">
+        <img src="./pics/add.svg" class="nav_img" />
+      </li>
+    </nav>
+
+    <h1 class="home_title">Your Schedule</h1>
+
+    <table class="schedule">
+      <tr class="schedule_row_titles">
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">07:45</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">08:35</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">09:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">10:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">11:25</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">12:15</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">13:05</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">14:00</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">14:55</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">15:50</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">16:45</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr class="schedule_row">
+        <th class="schedule_time">17:35</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </table>
+
+    <div id="addPrompt" class="prompt add_something">
+      <h2>Add</h2>
+      <p onclick="ShowAddRoom()" class="prompt_link">New Room</p>
+      <p onclick="ShowAddPerson()" class="prompt_link">New Person</p>
+      <p class="prompt_link">New Class</p>
+      <p class="prompt_link">New Booking</p>
+      <p class="highlight_button" onclick="CloseAdd()">Close</p>
+    </div>
+
+    <div class="prompt add_room" id="addRoom">
+      <h2>Add Room</h2>
+      <input type="text" placeholder="Room name..." class="text_input" />
+      <div class="button_row">
+        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <p class="highlight_button" onclick="CloseAddAll()">Close</p>
+      </div>
+    </div>
+
+    <div class="prompt add_person" id="addPerson">
+      <h2>Add Person</h2>
+      <input type="email" class="text_input" placeholder="Email..." />
+      <input type="text" class="text_input" placeholder="Name..." />
+      <input type="password" class="text_input" placeholder="Password..." />
+      <select id="role" class="selectmenu">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="admin">Admin</option>
+      </select>
+      <div class="button_row">
+        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <p class="highlight_button" onclick="CloseAddAll()">Close</p>
+      </div>
+    </div>
+    <script src="./js/prompthandler.js"></script>
+  </body>
 </html>
