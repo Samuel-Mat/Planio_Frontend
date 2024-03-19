@@ -139,27 +139,50 @@
       <p class="highlight_button" onclick="CloseAdd()">Close</p>
     </div>
 
-    <div class="prompt add_room" id="addRoom">
+    <form
+      class="prompt add_room"
+      id="addRoom"
+      onsubmit="AddRoom(); return false;"
+    >
       <h2>Add Room</h2>
-      <input type="text" placeholder="Room name..." class="text_input" />
+      <input
+        type="text"
+        id="roomName"
+        placeholder="Room name..."
+        class="text_input"
+      />
       <div class="button_row">
-        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <input type="submit" class="highlight_button" value="Create" />
         <p class="highlight_button" onclick="CloseAddAll()">Close</p>
       </div>
-    </div>
+    </form>
 
-    <div class="prompt add_class" id="addClass">
+    <form
+      class="prompt add_class"
+      id="addClass"
+      onsubmit="AddRoom(); return false;"
+    >
       <h2>Add Class</h2>
-      <input type="text" placeholder="Class name..." class="text_input" />
+      <input
+        type="text"
+        id="className"
+        placeholder="Class name..."
+        class="text_input"
+      />
       <div class="button_row">
-        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <input type="submit" class="highlight_button" value="Create" />
         <p class="highlight_button" onclick="CloseAddAll()">Close</p>
       </div>
-    </div>
+    </form>
 
-    <div class="prompt add_booking" id="addBooking">
+    <form class="prompt add_booking" id="addBooking">
       <h2>Add Booking</h2>
-      <input type="text" placeholder="Subject..." class="text_input" />
+      <input
+        type="text"
+        id="subjectName"
+        placeholder="Subject..."
+        class="text_input"
+      />
       <select id="from" class="selectmenu" name="From">
         <option selected disabled>From</option>
         <option value="07:45">07:45</option>
@@ -195,16 +218,35 @@
         <option value="TestRoom">TestRoom</option>
       </select>
       <div class="button_row">
-        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <input type="submit" class="highlight_button" value="Create" />
         <p class="highlight_button" onclick="CloseAddAll()">Close</p>
       </div>
-    </div>
+    </form>
 
-    <div class="prompt add_person" id="addPerson">
+    <form
+      class="prompt add_person"
+      id="addPerson"
+      onsubmit="AddPerson(); return false;"
+    >
       <h2>Add Person</h2>
-      <input type="email" class="text_input" placeholder="Email..." />
-      <input type="text" class="text_input" placeholder="Name..." />
-      <input type="password" class="text_input" placeholder="Password..." />
+      <input
+        type="email"
+        id="personEmail"
+        class="text_input"
+        placeholder="Email..."
+      />
+      <input
+        type="text"
+        id="personName"
+        class="text_input"
+        placeholder="Name..."
+      />
+      <input
+        type="password"
+        id="personPassword"
+        class="text_input"
+        placeholder="Password..."
+      />
       <select id="role" class="selectmenu">
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
@@ -214,10 +256,11 @@
         <option value="i21b">I21B</option>
       </select>
       <div class="button_row">
-        <p class="highlight_button" onclick="CloseAddAll()">Create</p>
+        <input type="submit" class="highlight_button" value="Create" />
         <p class="highlight_button" onclick="CloseAddAll()">Close</p>
       </div>
-    </div>
+    </form>
     <script src="./js/prompthandler.js"></script>
+    <script src="./js/addfetches.js"></script>
   </body>
 </html>

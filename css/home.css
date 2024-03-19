@@ -54,10 +54,15 @@ td {
 
 .nav_img {
   width: 3vw;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .nav_img:hover {
   cursor: pointer;
+  animation-name: navbuttons;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .text_input {
@@ -194,6 +199,7 @@ td {
   margin-right: 5%;
   text-align: center;
   width: 20%;
+  font-size: medium;
 }
 
 .highlight_button:hover {
@@ -213,4 +219,13 @@ td {
 
 .selectmenu:hover {
   cursor: pointer;
+}
+
+@keyframes navbuttons {
+  0% {
+    background-color: rgb(68, 66, 66);
+  }
+  50% {
+    background-color: rgb(121, 114, 110);
+  }
 }
