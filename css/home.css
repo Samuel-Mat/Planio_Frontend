@@ -5,9 +5,8 @@
 }
 
 .navbar {
-  display: flex;
   margin-top: 5vh;
-  margin-left: 10vw;
+  display: flex;
   width: 100vw;
   align-items: center;
   justify-content: center;
@@ -17,7 +16,8 @@
   color: white;
   text-decoration: none;
   list-style-type: none;
-  margin-right: 20vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 .home_title {
