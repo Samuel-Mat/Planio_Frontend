@@ -141,7 +141,7 @@ async function AddRoom() {
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
-      if(data == "Room successfully created") {
+      if (data == "Room successfully created") {
         CloseAddAll();
       } else {
         errorBox.innerHTML = "the room could not be created";
@@ -219,7 +219,7 @@ async function AddClass() {
     .then((data) => {
       console.log(data);
 
-      if(data == "Class successfully created") {
+      if (data == "Class successfully created") {
         CloseAddAll();
       } else {
         errorBox.innerHTML = "the class could not be added";

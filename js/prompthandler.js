@@ -1,6 +1,10 @@
 let userRole = "teacher";
 let url = "https://planiobackend.onrender.com/api/";
 
+function LogOut() {
+  sessionStorage.setItem("token", "");
+  window.location.href = "login.html";
+}
 function ShowAddPrompt() {
   const addPrompt = document.getElementById("addPrompt");
   addPrompt.style.visibility = "Visible";
