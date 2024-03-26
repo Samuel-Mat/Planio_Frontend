@@ -9,7 +9,7 @@ async function Start() {
 }
 async function GetRole() {
   let role = await fetch(url + "User/GetRole", {
-    method: "POST",
+    method: "GET",
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
