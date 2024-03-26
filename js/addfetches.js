@@ -1,4 +1,5 @@
 let jwt = sessionStorage.getItem("token");
+let errorBox = document.getElementById("errorBox");
 
 async function AddPerson() {
   let email = document.getElementById("personEmail").value;
@@ -41,8 +42,21 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
+      if(data == "Class not found." || data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻") {
+        errorBox.innerHTML = "the student could not be added";
+        errorBox.style.right = "-35vw";
+        errorBox.classList.remove("flyOut");
+        errorBox.classList.add("flyIn");
+
+        setTimeout(1000);
+
+        errorBox.style.right = "0";
+        errorBox.classList.add("flyOut");
+        errorBox.classList.remove("flyIn");
+      } else {
+        CloseAddAll();
+      }
     });
-  CloseAddAll();
 }
 
 async function AddTeacher(email, firstname, lastname, password) {
@@ -62,8 +76,21 @@ async function AddTeacher(email, firstname, lastname, password) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      if(data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻") {
+        errorBox.innerHTML = "the teacher could not be added";
+        errorBox.style.right = "-35vw";
+        errorBox.classList.remove("flyOut");
+        errorBox.classList.add("flyIn");
+
+        setTimeout(1000);
+
+        errorBox.style.right = "0";
+        errorBox.classList.add("flyOut");
+        errorBox.classList.remove("flyIn");
+      } else {
+        CloseAddAll();
+      }
     });
-  CloseAddAll();
 }
 
 async function AddAdmin(email, password) {
@@ -81,8 +108,21 @@ async function AddAdmin(email, password) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      if(data == "An Admin with this Email already exists (╯°□°）╯︵ ┻━┻") {
+        errorBox.innerHTML = "the admin could not be added";
+        errorBox.style.right = "-35vw";
+        errorBox.classList.remove("flyOut");
+        errorBox.classList.add("flyIn");
+
+        setTimeout(1000);
+
+        errorBox.style.right = "0";
+        errorBox.classList.add("flyOut");
+        errorBox.classList.remove("flyIn");
+      } else {
+        CloseAddAll();
+      }
     });
-  CloseAddAll();
 }
 
 async function AddRoom() {
@@ -103,6 +143,17 @@ async function AddRoom() {
       console.log(data);
       if(data == "Room successfully created") {
         CloseAddAll();
+      } else {
+        errorBox.innerHTML = "the room could not be created";
+        errorBox.style.right = "-35vw";
+        errorBox.classList.remove("flyOut");
+        errorBox.classList.add("flyIn");
+
+        setTimeout(1000);
+
+        errorBox.style.right = "0";
+        errorBox.classList.add("flyOut");
+        errorBox.classList.remove("flyIn");
       }
     });
 }
@@ -136,6 +187,17 @@ async function AddBooking() {
 
       if(data == "Lesson successfully created") {
         CloseAddAll();
+      } else {
+        errorBox.innerHTML = "the lesson could not be created";
+        errorBox.style.right = "-35vw";
+        errorBox.classList.remove("flyOut");
+        errorBox.classList.add("flyIn");
+
+        setTimeout(1000);
+
+        errorBox.style.right = "0";
+        errorBox.classList.add("flyOut");
+        errorBox.classList.remove("flyIn");
       }
     });
 }
@@ -159,6 +221,17 @@ async function AddClass() {
 
       if(data == "Class successfully created") {
         CloseAddAll();
+      } else {
+        errorBox.innerHTML = "the class could not be added";
+        errorBox.style.right = "-35vw";
+        errorBox.classList.remove("flyOut");
+        errorBox.classList.add("flyIn");
+
+        setTimeout(1000);
+
+        errorBox.style.right = "0";
+        errorBox.classList.add("flyOut");
+        errorBox.classList.remove("flyIn");
       }
     });
 }
