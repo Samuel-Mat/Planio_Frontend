@@ -72,6 +72,7 @@ async function FetchClasses() {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt
     },
   })
     .then((response) => response.json())
@@ -83,6 +84,24 @@ async function FetchClasses() {
   return classes;
 }
 
+async function FetchRooms() {
+  const rooms = await fetch(url + "Room/GetAllRooms", {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      credentials: "same-origin",
+      Authorization: jwt
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      return data;
+    });
+
+  return rooms;
+}
+
 function ShowAddClass() {
   CloseAdd();
 
@@ -90,8 +109,32 @@ function ShowAddClass() {
   addRoomPrompt.style.visibility = "Visible";
 }
 
-function ShowAddBooking() {
+async function ShowAddBooking() {
   CloseAdd();
+
+  let rooms = [];
+  rooms = await FetchRooms();
+  console.log(rooms[0]);
+  const roomList = document.getElementById("room");
+
+  for (let i = 0; i < rooms.length; i++) {
+    const option = document.createElement("option");
+    option.textContent = rooms[i].roomName;
+    option.value = rooms[i].roomName;
+    roomList.append(option);
+  }
+
+  let classes = [];
+  classes = await FetchClasses();
+  console.log(classes[0]);
+  const classList = document.getElementById("classBooking");
+
+  for (let i = 0; i < classes.length; i++) {
+    const option = document.createElement("option");
+    option.textContent = classes[i].className;
+    option.value = classes[i].className;
+    classList.append(option);
+  }
 
   const addRoomPrompt = document.getElementById("addBooking");
   addRoomPrompt.style.visibility = "Visible";

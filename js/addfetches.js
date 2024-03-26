@@ -133,6 +133,10 @@ async function AddBooking() {
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
+
+      if(data == "Lesson successfully created") {
+        CloseAddAll();
+      }
     });
 }
 
