@@ -1,4 +1,4 @@
-let jwt;
+let jwt = sessionStorage.getItem("token");
 
 async function AddPerson() {
   let email = document.getElementById("personEmail").value;
@@ -101,7 +101,7 @@ async function AddRoom() {
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
-      if(data == "Room successfully created") {
+      if (data == "Room successfully created") {
         CloseAddAll();
       }
     });
@@ -147,7 +147,7 @@ async function AddClass() {
     .then((data) => {
       console.log(data);
 
-      if(data == "Class successfully created") {
+      if (data == "Class successfully created") {
         CloseAddAll();
       }
     });
