@@ -1,16 +1,30 @@
-let url = "";
 let jwt;
 
 async function AddPerson() {
   let email = document.getElementById("personEmail").value;
-  let name = document.getElementById("personName").value;
+  let firstname = document.getElementById("personFirstName").value;
+  let lastname = document.getElementById("personLastName").value;
   let password = document.getElementById("personPassword").value;
   let role = document.getElementById("role").value;
   let classPerson = document.getElementById("class").value;
 
-  console.log("Add Person: " + name + email + password + role + classPerson);
+  if (role == "student") {
+    await AddStudent(email, firstname, lastname, password, classPerson);
+  }
 
-  await fetch(url + "AddPerson", {
+  if (role == "teacher") {
+    await AddTeacher(email, firstname, lastname, password);
+  }
+
+  if (role == "admin") {
+    await AddAdmin(email, password);
+  }
+
+  CloseAddAll();
+}
+
+async function AddStudent(email, firstname, lastname, password, classPerson) {
+  await fetch(url + "Admin/RegisterStudent", {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -18,13 +32,53 @@ async function AddPerson() {
     },
     body: JSON.stringify({
       email: email,
-      name: name,
+      firstname: firstname,
+      lastname: lastname,
       password: password,
-      role: role,
-      class: classPerson,
+      className: classPerson,
     }),
   })
     .then((response) => response.text())
+    .then((data) => {
+      console.log(data);
+    });
+  CloseAddAll();
+}
+
+async function AddTeacher(email, firstname, lastname, password) {
+  await fetch(url + "Admin/RegisterTeacher", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      credentials: "same-origin",
+    },
+    body: JSON.stringify({
+      email: email,
+      firstname: firstname,
+      lastname: lastname,
+      password: password,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+  CloseAddAll();
+}
+
+async function AddAdmin(email, password) {
+  await fetch(url + "Admin/RegisterAdmin", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      credentials: "same-origin",
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+  })
+    .then((response) => response.json())
     .then((data) => {
       console.log(data);
     });
@@ -106,8 +160,10 @@ async function AddClass() {
 
 function CloseAddAll() {
   const addPrompts = document.getElementsByClassName("prompt");
+  const textInputs = document.getElementsByClassName("text_inputperson");
 
   for (let i = 0; i < addPrompts.length; i++) {
+    console.log(addPrompts[i]);
     addPrompts[i].style.visibility = "Hidden";
   }
 }

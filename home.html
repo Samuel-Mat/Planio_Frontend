@@ -196,32 +196,37 @@
       onsubmit="AddPerson(); return false;"
     >
       <h2>Add Person</h2>
-      <input
-        type="email"
-        id="personEmail"
-        class="text_input"
-        placeholder="Email..."
-      />
-      <input
-        type="text"
-        id="personName"
-        class="text_input"
-        placeholder="Name..."
-      />
-      <input
-        type="password"
-        id="personPassword"
-        class="text_input"
-        placeholder="Password..."
-      />
-      <select id="role" class="selectmenu">
+      <select id="role" class="selectmenu" onchange="ChangeInput()">
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
         <option value="admin">Admin</option>
       </select>
-      <select id="class" class="selectmenu">
-        <option value="i21b">I21B</option>
-      </select>
+      <input
+        type="email"
+        id="personEmail"
+        class="text_inputperson"
+        placeholder="Email..."
+      />
+      <input
+        type="password"
+        id="personPassword"
+        class="text_inputperson"
+        placeholder="Password..."
+      />
+      <input
+        type="text"
+        id="personFirstName"
+        class="text_inputperson"
+        placeholder="First Name..."
+      />
+      <input
+        type="text"
+        id="personLastName"
+        class="text_inputperson"
+        placeholder="Last Name..."
+      />
+
+      <select id="class" class="selectmenu"></select>
       <div class="button_row">
         <input type="submit" class="highlight_button" value="Create" />
         <p class="highlight_button" onclick="CloseAddAll()">Close</p>
