@@ -35,7 +35,7 @@
         <th>Friday</th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">07:45</th>
+        <th class="schedule_time">07:45-08:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -43,7 +43,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">08:35</th>
+        <th class="schedule_time">08:45</th>
         <th></th>
         <th></th>
         <th></th>
@@ -51,7 +51,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">09:30</th>
+        <th class="schedule_time">09:45</th>
         <th></th>
         <th></th>
         <th></th>
@@ -59,7 +59,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">10:30</th>
+        <th class="schedule_time">10:45</th>
         <th></th>
         <th></th>
         <th></th>
@@ -162,7 +162,7 @@
     <form
       class="prompt add_class"
       id="addClass"
-      onsubmit="AddRoom(); return false;"
+      onsubmit="AddClass(); return false;"
     >
       <h2>Add Class</h2>
       <input
@@ -185,8 +185,8 @@
         placeholder="Subject..."
         class="text_input"
       />
-      <select id="from" class="selectmenu" name="From">
-        <option selected disabled>From</option>
+      <select id="time" class="selectmenu" name="Time">
+        <option selected disabled>Time</option>
         <option value="07:45">07:45</option>
         <option value="08:35">08:35</option>
         <option value="09:30">09:30</option>
@@ -200,20 +200,13 @@
         <option value="16:45">16:45</option>
         <option value="17:35">17:35</option>
       </select>
-      <select id="to" class="selectmenu">
-        <option selected disabled>To</option>
-        <option value="07:45">07:45</option>
-        <option value="08:35">08:35</option>
-        <option value="09:30">09:30</option>
-        <option value="10:30">10:30</option>
-        <option value="11:25">11:25</option>
-        <option value="12:15">12:15</option>
-        <option value="13:05">13:05</option>
-        <option value="14:00">14:00</option>
-        <option value="14:55">14:55</option>
-        <option value="15:50">15:50</option>
-        <option value="16:45">16:45</option>
-        <option value="17:35">17:35</option>
+      <select id="day" class="selectmenu" name="Day">
+        <option selected disabled>Day</option>
+        <option value="07:45">Monday</option>
+        <option value="08:35">Tuesday</option>
+        <option value="09:30">Wednesday</option>
+        <option value="10:30">Thursday</option>
+        <option value="11:25">Friday</option>
       </select>
       <select id="classBooking" class="selectmenu">
         <option selected disabled>Class</option>

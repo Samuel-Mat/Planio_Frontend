@@ -32,29 +32,30 @@ async function AddPerson() {
 }
 
 async function AddRoom() {
-  let roomName = docuemnt.getElementById("roomName").value;
+  let roomName = document.getElementById("roomName").value;
 
-  await fetch(url + "AddRoom", {
+  await fetch("https://planiobackend.onrender.com/api/Room/CreateRoom", {
     method: "POST",
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
     },
     body: JSON.stringify({
-      name: roomName,
+      roomname: roomName,
     }),
   })
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
+      if(data == "Room successfully created") {
+        CloseAddAll();
+      }
     });
 }
 
 async function AddBooking() {
   let subject = document.getElementById("subjectName").value;
-  let timeFrom = document.getElementById("from").value;
-  let timeTo = document.getElementById("to").value;
-  let room = document.getElementById("room").value;
+  let time = document.getElementById("time").value;
 
   await fetch(url + "AddBooking", {
     method: "POST",
@@ -78,19 +79,23 @@ async function AddBooking() {
 async function AddClass() {
   let className = document.getElementById("className").value;
 
-  await fetch(url + "AddClass", {
+  await fetch("https://planiobackend.onrender.com/api/Class/CreateClass", {
     method: "POST",
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
     },
     body: JSON.stringify({
-      name: className,
+      classname: className,
     }),
   })
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
+
+      if(data == "Class successfully created") {
+        CloseAddAll();
+      }
     });
 }
 
