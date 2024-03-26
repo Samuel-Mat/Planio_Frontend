@@ -1,12 +1,14 @@
 Start();
 
 async function Start() {
-  let lessons = await GetLessons();
+  let role = await GetRole();
+  console.log(role);
+  let lessons = await GetLessons(role);
   console.log(lessons);
   AddLessonsToSchedule(lessons);
 }
-async function GetLessons() {
-  const lessons = await fetch(url + "Student/GetLessonsOfStudentSelf", {
+async function GetRole() {
+  let role = await fetch(url + "User/GetRole", {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -14,11 +16,45 @@ async function GetLessons() {
       Authorization: jwt,
     },
   })
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((data) => {
       console.log(data);
       return data;
     });
+  return role;
+}
+async function GetLessons(role) {
+  let lessons = [];
+  if (role == "student") {
+    lessons = await fetch(url + "Student/GetLessonsOfStudentSelf", {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        credentials: "same-origin",
+        Authorization: jwt,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
+  }
+  if (role == "teacher") {
+    lessons = await fetch(url + "Teacher/GetLessonsOfTeacherSelf", {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        credentials: "same-origin",
+        Authorization: jwt,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
+  }
 
   return lessons;
 }
