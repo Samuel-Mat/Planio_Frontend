@@ -27,7 +27,7 @@
 
     <table class="schedule">
       <tr class="schedule_row_titles">
-        <th>Time</th>
+        <th style="width: 9vw">Time</th>
         <th>Monday</th>
         <th>Tuesday</th>
         <th>Wednesday</th>
@@ -35,7 +35,7 @@
         <th>Friday</th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">07:45-08:30</th>
+        <th class="schedule_time">07:45 - 08:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -43,7 +43,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">08:45</th>
+        <th class="schedule_time">08:45 - 09:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -51,7 +51,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">09:45</th>
+        <th class="schedule_time">09:45 - 10:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -59,7 +59,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">10:45</th>
+        <th class="schedule_time">10:45 - 11:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -67,7 +67,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">11:25</th>
+        <th class="schedule_time">11:45 - 12:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -75,7 +75,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">12:15</th>
+        <th class="schedule_time">13:45 - 14:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -83,7 +83,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">13:05</th>
+        <th class="schedule_time">14:45 - 15:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -91,39 +91,7 @@
         <th></th>
       </tr>
       <tr class="schedule_row">
-        <th class="schedule_time">14:00</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr class="schedule_row">
-        <th class="schedule_time">14:55</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr class="schedule_row">
-        <th class="schedule_time">15:50</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr class="schedule_row">
-        <th class="schedule_time">16:45</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr class="schedule_row">
-        <th class="schedule_time">17:35</th>
+        <th class="schedule_time">15:45 - 16:30</th>
         <th></th>
         <th></th>
         <th></th>
@@ -177,7 +145,11 @@
       </div>
     </form>
 
-    <form class="prompt add_booking" id="addBooking">
+    <form
+      class="prompt add_booking"
+      id="addBooking"
+      onsubmit="AddBooking(); return false;"
+    >
       <h2>Add Booking</h2>
       <input
         type="text"
@@ -187,26 +159,22 @@
       />
       <select id="time" class="selectmenu" name="Time">
         <option selected disabled>Time</option>
-        <option value="07:45">07:45</option>
-        <option value="08:35">08:35</option>
-        <option value="09:30">09:30</option>
-        <option value="10:30">10:30</option>
-        <option value="11:25">11:25</option>
-        <option value="12:15">12:15</option>
-        <option value="13:05">13:05</option>
-        <option value="14:00">14:00</option>
-        <option value="14:55">14:55</option>
-        <option value="15:50">15:50</option>
-        <option value="16:45">16:45</option>
-        <option value="17:35">17:35</option>
+        <option value="1">07:45 - 08:30</option>
+        <option value="2">08:45 - 09:30</option>
+        <option value="3">09:45 - 10:30</option>
+        <option value="4">10:45 - 11:30</option>
+        <option value="5">11:45 - 12:30</option>
+        <option value="6">13:45 - 14:30</option>
+        <option value="7">14:45 - 15:30</option>
+        <option value="8">15:45 - 16:30</option>
       </select>
       <select id="day" class="selectmenu" name="Day">
         <option selected disabled>Day</option>
-        <option value="07:45">Monday</option>
-        <option value="08:35">Tuesday</option>
-        <option value="09:30">Wednesday</option>
-        <option value="10:30">Thursday</option>
-        <option value="11:25">Friday</option>
+        <option value="0">Monday</option>
+        <option value="8">Tuesday</option>
+        <option value="16">Wednesday</option>
+        <option value="24">Thursday</option>
+        <option value="32">Friday</option>
       </select>
       <select id="classBooking" class="selectmenu">
         <option selected disabled>Class</option>
