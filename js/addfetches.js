@@ -110,23 +110,33 @@ async function AddRoom() {
 async function AddBooking() {
   let subject = document.getElementById("subjectName").value;
   let time = document.getElementById("time").value;
+  let day = document.getElementById("day").value;
+  let classBooking = document.getElementById("classBooking").value;
+  let roomBooking = document.getElementById("room").value;
 
-  await fetch(url + "AddBooking", {
+  let lessonTime = parseInt(time)+parseInt(day);
+
+  await fetch("https://planiobackend.onrender.com/api/Lesson/CreateLesson", {
     method: "POST",
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt
     },
     body: JSON.stringify({
-      subject: subject,
-      from: timeFrom,
-      to: timeTo,
-      room: room,
+      lessonname: subject,
+      attendingclassname: classBooking,
+      roomname: roomBooking,
+      lessonTime: lessonTime,
     }),
   })
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
+
+      if(data == "Lesson successfully created") {
+        CloseAddAll();
+      }
     });
 }
 
