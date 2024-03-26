@@ -76,7 +76,7 @@ async function FetchClasses() {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
-      Authorization: jwt
+      Authorization: jwt,
     },
   })
     .then((response) => response.json())
@@ -94,7 +94,7 @@ async function FetchRooms() {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
-      Authorization: jwt
+      Authorization: jwt,
     },
   })
     .then((response) => response.json())
