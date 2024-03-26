@@ -1,4 +1,4 @@
-let jwt;
+let jwt = sessionStorage.getItem("token");
 
 async function AddPerson() {
   let email = document.getElementById("personEmail").value;
@@ -121,6 +121,7 @@ async function AddBooking() {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt
     },
     body: JSON.stringify({
       lessonname: subject,
