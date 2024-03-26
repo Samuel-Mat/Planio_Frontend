@@ -19,7 +19,7 @@
           <img src="./pics/logout.svg" class="nav_img" onclick="LogOut()" />
         </li>
         <li>PlanioLogo</li>
-        <li onclick="ShowAddPrompt()">
+        <li id="addbtn" onclick="ShowAddPrompt()">
           <img src="./pics/add.svg" class="nav_img" />
         </li>
       </nav>
@@ -104,10 +104,16 @@
 
     <div id="addPrompt" class="prompt add_something">
       <h2>Add</h2>
-      <p onclick="ShowAddRoom()" class="prompt_link">New Room</p>
-      <p onclick="ShowAddPerson()" class="prompt_link">New Person</p>
-      <p onclick="ShowAddClass()" class="prompt_link">New Class</p>
-      <p onclick="ShowAddBooking()" class="prompt_link">New Booking</p>
+      <p onclick="ShowAddRoom()" class="prompt_link" id="newroom">New Room</p>
+      <p onclick="ShowAddPerson()" class="prompt_link" id="newperson">
+        New Person
+      </p>
+      <p onclick="ShowAddClass()" class="prompt_link" id="newclass">
+        New Class
+      </p>
+      <p onclick="ShowAddBooking()" class="prompt_link" id="newbooking">
+        New Booking
+      </p>
       <p class="highlight_button" onclick="CloseAdd()">Close</p>
     </div>
 

@@ -1,6 +1,30 @@
 let jwt = sessionStorage.getItem("token");
 let errorBox = document.getElementById("errorBox");
 
+fetch(url + "User/GetRole", {
+  method: "GET",
+  headers: {
+    "content-type": "application/json",
+    credentials: "same-origin",
+    Authorization: jwt,
+  },
+})
+.then((response) => response.text())
+.then((data) => {
+  console.log(data);
+  if(data == "teacher") {
+    document.getElementById("newroom").style.display = "none";
+    document.getElementById("newperson").style.display = "none";
+    document.getElementById("newclass").style.display = "none";
+  }
+  if(data == "student") {
+    document.getElementById("addbtn").style.display = "none";
+  }
+  if(data == "admin") {
+    document.getElementById("newbooking").style.display = "none";
+  }
+});
+
 async function AddPerson() {
   let email = document.getElementById("personEmail").value;
   let firstname = document.getElementById("personFirstName").value;
