@@ -30,6 +30,7 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt,
     },
     body: JSON.stringify({
       email: email,
@@ -48,11 +49,11 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
-        setTimeout(1000);
-
-        errorBox.style.right = "0";
-        errorBox.classList.add("flyOut");
-        errorBox.classList.remove("flyIn");
+        setTimeout(() => {
+          errorBox.style.right = "0";
+          errorBox.classList.add("flyOut");
+          errorBox.classList.remove("flyIn");
+        }, 2000);
       } else {
         CloseAddAll();
       }
@@ -65,6 +66,7 @@ async function AddTeacher(email, firstname, lastname, password) {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt,
     },
     body: JSON.stringify({
       email: email,
@@ -82,11 +84,11 @@ async function AddTeacher(email, firstname, lastname, password) {
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
-        setTimeout(1000);
-
-        errorBox.style.right = "0";
-        errorBox.classList.add("flyOut");
-        errorBox.classList.remove("flyIn");
+        setTimeout(() => {
+          errorBox.style.right = "0";
+          errorBox.classList.add("flyOut");
+          errorBox.classList.remove("flyIn");
+        }, 2000);
       } else {
         CloseAddAll();
       }
@@ -99,6 +101,7 @@ async function AddAdmin(email, password) {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt,
     },
     body: JSON.stringify({
       email: email,
@@ -114,11 +117,11 @@ async function AddAdmin(email, password) {
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
-        setTimeout(1000);
-
-        errorBox.style.right = "0";
-        errorBox.classList.add("flyOut");
-        errorBox.classList.remove("flyIn");
+        setTimeout(() => {
+          errorBox.style.right = "0";
+          errorBox.classList.add("flyOut");
+          errorBox.classList.remove("flyIn");
+        }, 2000);
       } else {
         CloseAddAll();
       }
@@ -133,6 +136,7 @@ async function AddRoom() {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt,
     },
     body: JSON.stringify({
       roomname: roomName,
@@ -149,11 +153,11 @@ async function AddRoom() {
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
-        setTimeout(1000);
-
-        errorBox.style.right = "0";
-        errorBox.classList.add("flyOut");
-        errorBox.classList.remove("flyIn");
+        setTimeout(() => {
+          errorBox.style.right = "0";
+          errorBox.classList.add("flyOut");
+          errorBox.classList.remove("flyIn");
+        }, 2000);
       }
     });
 }
@@ -193,11 +197,11 @@ async function AddBooking() {
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
-        setTimeout(1000);
-
-        errorBox.style.right = "0";
-        errorBox.classList.add("flyOut");
-        errorBox.classList.remove("flyIn");
+        setTimeout(() => {
+          errorBox.style.right = "0";
+          errorBox.classList.add("flyOut");
+          errorBox.classList.remove("flyIn");
+        }, 2000);
       }
     });
 }
@@ -210,6 +214,7 @@ async function AddClass() {
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
+      Authorization: jwt,
     },
     body: JSON.stringify({
       classname: className,
@@ -227,11 +232,11 @@ async function AddClass() {
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
-        setTimeout(1000);
-
-        errorBox.style.right = "0";
-        errorBox.classList.add("flyOut");
-        errorBox.classList.remove("flyIn");
+        setTimeout(() => {
+          errorBox.style.right = "0";
+          errorBox.classList.add("flyOut");
+          errorBox.classList.remove("flyIn");
+        }, 2000);
       }
     });
 }
