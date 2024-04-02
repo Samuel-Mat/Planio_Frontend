@@ -176,7 +176,7 @@ async function AddRoom() {
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
-      if (data == "Room successfully created") {
+      if (data == "Raum wurde erfolgreich hinzugefügt") {
         ShowSuccess("Successfully created new room");
         CloseAddAll();
       } else {
@@ -292,5 +292,5 @@ function ShowSuccess(textMessage) {
   successBox.classList.add("flyInSuccess");
   setTimeout(() => {
     successBox.classList.remove("flyInSuccess");
-  }, 2000);
+  }, 3000);
 }

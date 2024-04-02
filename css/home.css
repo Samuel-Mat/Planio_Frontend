@@ -215,10 +215,40 @@ td {
 
 .highlight_button:hover {
   cursor: pointer;
+  animation-name: promptButtonAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes promptButtonAnimation {
+  0% {
+    border-color: rgb(68, 66, 66);
+  }
+  50% {
+    border-color: rgb(132, 130, 129);
+  }
+  100% {
+    border-color: rgb(68, 66, 66);
+  }
 }
 
 .prompt_link:hover {
   cursor: pointer;
+  animation-name: promptLinkAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes promptLinkAnimation {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(132, 130, 129);
+  }
+  100% {
+    color: white;
+  }
 }
 
 .selectmenu {
@@ -304,9 +334,6 @@ td {
   font-size: 3.5vh;
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
-  animation-name: infoboxes;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
 }
 
 .success-box h2 {
@@ -320,7 +347,7 @@ td {
 }
 
 .flyInSuccess {
-  animation: successBoxAnimation 2.5s forwards;
+  animation: successBoxAnimation 3s forwards;
 }
 
 @keyframes successBoxAnimation {
