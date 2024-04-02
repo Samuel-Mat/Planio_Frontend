@@ -73,12 +73,12 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
         data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻"
       ) {
         errorBox.innerHTML = "the student could not be added";
-        errorBox.style.right = "-35vw";
+        errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
         setTimeout(() => {
-          errorBox.style.right = "0";
+          errorBox.style.top = "2vh";
           errorBox.classList.add("flyOut");
           errorBox.classList.remove("flyIn");
         }, 2000);
@@ -109,12 +109,12 @@ async function AddTeacher(email, firstname, lastname, password) {
       console.log(data);
       if (data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻") {
         errorBox.innerHTML = "the teacher could not be added";
-        errorBox.style.right = "-35vw";
+        errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
         setTimeout(() => {
-          errorBox.style.right = "0";
+          errorBox.style.top = "2vh";
           errorBox.classList.add("flyOut");
           errorBox.classList.remove("flyIn");
         }, 2000);
@@ -143,12 +143,12 @@ async function AddAdmin(email, password) {
       console.log(data);
       if (data == "An Admin with this Email already exists (╯°□°）╯︵ ┻━┻") {
         errorBox.innerHTML = "the admin could not be added";
-        errorBox.style.right = "-35vw";
+        errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
         setTimeout(() => {
-          errorBox.style.right = "0";
+          errorBox.style.top = "2vh";
           errorBox.classList.add("flyOut");
           errorBox.classList.remove("flyIn");
         }, 2000);
@@ -181,12 +181,12 @@ async function AddRoom() {
         CloseAddAll();
       } else {
         errorBox.innerHTML = data;
-        errorBox.style.right = "-35vw";
+        errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
         setTimeout(() => {
-          errorBox.style.right = "0";
+          errorBox.style.top = "2vh";
           errorBox.classList.add("flyOut");
           errorBox.classList.remove("flyIn");
         }, 2000);
@@ -227,12 +227,12 @@ async function AddBooking() {
         window.location.reload();
       } else {
         errorBox.innerHTML = data;
-        errorBox.style.right = "-35vw";
+        errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
         setTimeout(() => {
-          errorBox.style.right = "0";
+          errorBox.style.top = "2vh";
           errorBox.classList.add("flyOut");
           errorBox.classList.remove("flyIn");
         }, 2000);
@@ -263,12 +263,12 @@ async function AddClass() {
         CloseAddAll();
       } else {
         errorBox.innerHTML = data;
-        errorBox.style.right = "-35vw";
+        errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
 
         setTimeout(() => {
-          errorBox.style.right = "0";
+          errorBox.style.top = "2vh";
           errorBox.classList.add("flyOut");
           errorBox.classList.remove("flyIn");
         }, 2000);
@@ -292,5 +292,5 @@ function ShowSuccess(textMessage) {
   successBox.classList.add("flyInSuccess");
   setTimeout(() => {
     successBox.classList.remove("flyInSuccess");
-  }, 2500);
+  }, 2000);
 }

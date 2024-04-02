@@ -251,10 +251,9 @@ td {
   align-items: center;
   padding: 2rem;
   position: absolute;
-  right: -35vw;
-  top: 0;
-  margin-top: 5vh;
-  margin-right: 3vw;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  top: -35vh;
   transition: 0.2s;
   color: white;
   text-align: center;
@@ -275,13 +274,13 @@ td {
 
 @keyframes flyIn {
   to {
-    right: 0;
+    top: 2vh;
   }
 }
 
 @keyframes flyOut {
   to {
-    right: -35vw;
+    top: -35vh;
   }
 }
 
