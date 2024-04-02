@@ -5,7 +5,7 @@ async function Start() {
   console.log(role);
   let lessons = await GetLessons(role);
   console.log(lessons);
-  AddLessonsToSchedule(lessons);
+  AddLessonsToSchedule(lessons, role);
 }
 async function GetRole() {
   let role = await fetch(url + "User/GetRole", {
@@ -59,7 +59,7 @@ async function GetLessons(role) {
   return lessons;
 }
 
-function AddLessonsToSchedule(lessons) {
+function AddLessonsToSchedule(lessons, role) {
   const rows = document.getElementsByClassName("schedule_row");
   for (let i = 0; i < lessons.length; i++) {
     let day = Math.floor(lessons[i].lessonTime / 8 - 0.01);
@@ -67,7 +67,11 @@ function AddLessonsToSchedule(lessons) {
     let fields = rows[time - 1].querySelectorAll("th");
     const field = fields[day + 1];
     console.log(lessons);
-    field.textContent = `${lessons[i].lessonName} | ${lessons[i].roomName} | ${lessons[i].attendingClassName}`;
+    if(role == "teacher") {
+      field.textContent = `${lessons[i].lessonName} | ${lessons[i].roomName} | ${lessons[i].attendingClassName}`;
+    } else {
+      field.textContent = `${lessons[i].lessonName} | ${lessons[i].roomName}`;
+    }
   }
 }
 
