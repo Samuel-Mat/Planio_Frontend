@@ -1,5 +1,6 @@
 let jwt = sessionStorage.getItem("token");
 let errorBox = document.getElementById("errorBox");
+let successBox = document.getElementById("successBox");
 
 fetch(url + "User/GetRole", {
   method: "GET",
@@ -9,21 +10,21 @@ fetch(url + "User/GetRole", {
     Authorization: jwt,
   },
 })
-.then((response) => response.text())
-.then((data) => {
-  console.log(data);
-  if(data == "teacher") {
-    document.getElementById("newroom").style.display = "none";
-    document.getElementById("newperson").style.display = "none";
-    document.getElementById("newclass").style.display = "none";
-  }
-  if(data == "student") {
-    document.getElementById("addbtn").style.display = "none";
-  }
-  if(data == "admin") {
-    document.getElementById("newbooking").style.display = "none";
-  }
-});
+  .then((response) => response.text())
+  .then((data) => {
+    console.log(data);
+    if (data == "teacher") {
+      document.getElementById("newroom").style.display = "none";
+      document.getElementById("newperson").style.display = "none";
+      document.getElementById("newclass").style.display = "none";
+    }
+    if (data == "student") {
+      document.getElementById("addbtn").style.display = "none";
+    }
+    if (data == "admin") {
+      document.getElementById("newbooking").style.display = "none";
+    }
+  });
 
 async function AddPerson() {
   let email = document.getElementById("personEmail").value;
@@ -67,7 +68,10 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
-      if(data == "Class not found." || data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻") {
+      if (
+        data == "Class not found." ||
+        data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻"
+      ) {
         errorBox.innerHTML = "the student could not be added";
         errorBox.style.right = "-35vw";
         errorBox.classList.remove("flyOut");
@@ -79,6 +83,7 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
           errorBox.classList.remove("flyIn");
         }, 2000);
       } else {
+        ShowSuccess("Successfully created new student");
         CloseAddAll();
       }
     });
@@ -102,7 +107,7 @@ async function AddTeacher(email, firstname, lastname, password) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if(data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻") {
+      if (data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻") {
         errorBox.innerHTML = "the teacher could not be added";
         errorBox.style.right = "-35vw";
         errorBox.classList.remove("flyOut");
@@ -114,6 +119,7 @@ async function AddTeacher(email, firstname, lastname, password) {
           errorBox.classList.remove("flyIn");
         }, 2000);
       } else {
+        ShowSuccess("Successfully created new teacher");
         CloseAddAll();
       }
     });
@@ -135,7 +141,7 @@ async function AddAdmin(email, password) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if(data == "An Admin with this Email already exists (╯°□°）╯︵ ┻━┻") {
+      if (data == "An Admin with this Email already exists (╯°□°）╯︵ ┻━┻") {
         errorBox.innerHTML = "the admin could not be added";
         errorBox.style.right = "-35vw";
         errorBox.classList.remove("flyOut");
@@ -147,6 +153,7 @@ async function AddAdmin(email, password) {
           errorBox.classList.remove("flyIn");
         }, 2000);
       } else {
+        ShowSuccess("Successfully created new admin");
         CloseAddAll();
       }
     });
@@ -170,6 +177,7 @@ async function AddRoom() {
     .then((data) => {
       console.log(data);
       if (data == "Room successfully created") {
+        ShowSuccess("Successfully created new room");
         CloseAddAll();
       } else {
         errorBox.innerHTML = data;
@@ -193,14 +201,14 @@ async function AddBooking() {
   let classBooking = document.getElementById("classBooking").value;
   let roomBooking = document.getElementById("room").value;
 
-  let lessonTime = parseInt(time)+parseInt(day);
+  let lessonTime = parseInt(time) + parseInt(day);
 
   await fetch("https://planiobackend.onrender.com/api/Lesson/CreateLesson", {
     method: "POST",
     headers: {
       "content-type": "application/json",
       credentials: "same-origin",
-      Authorization: jwt
+      Authorization: jwt,
     },
     body: JSON.stringify({
       lessonname: subject,
@@ -213,7 +221,8 @@ async function AddBooking() {
     .then((data) => {
       console.log(data);
 
-      if(data == "Lesson successfully created") {
+      if (data == "Lesson successfully created") {
+        ShowSuccess("Successfully created new lesson");
         CloseAddAll();
         window.location.reload();
       } else {
@@ -250,6 +259,7 @@ async function AddClass() {
       console.log(data);
 
       if (data == "Class successfully created") {
+        ShowSuccess("Successfully created new class");
         CloseAddAll();
       } else {
         errorBox.innerHTML = data;
@@ -274,4 +284,13 @@ function CloseAddAll() {
     console.log(addPrompts[i]);
     addPrompts[i].style.visibility = "Hidden";
   }
+}
+
+function ShowSuccess(textMessage) {
+  const successText = document.getElementById("successText");
+  successText.textContent = textMessage;
+  successBox.classList.add("flyInSuccess");
+  setTimeout(() => {
+    successBox.classList.remove("flyInSuccess");
+  }, 2500);
 }
