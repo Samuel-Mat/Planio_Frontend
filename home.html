@@ -27,16 +27,16 @@
       </nav>
     </div>
 
-    <h1 class="home_title">Your Schedule</h1>
+    <h1 class="home_title">Dein Stundenplan</h1>
 
     <table class="schedule">
       <tr class="schedule_row_titles">
-        <th style="width: 9vw">Time</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
+        <th style="width: 9vw">Zeit</th>
+        <th>Montag</th>
+        <th>Dienstag</th>
+        <th>Mittwoch</th>
+        <th>Donnerstag</th>
+        <th>Freitag</th>
       </tr>
       <tr class="schedule_row">
         <th class="schedule_time">07:45 - 08:30</th>
@@ -105,18 +105,18 @@
     </table>
 
     <div id="addPrompt" class="prompt add_something">
-      <h2>Add</h2>
-      <p onclick="ShowAddRoom()" class="prompt_link" id="newroom">New Room</p>
+      <h2>Hinzufügen</h2>
+      <p onclick="ShowAddRoom()" class="prompt_link" id="newroom">Neuer Raum</p>
       <p onclick="ShowAddPerson()" class="prompt_link" id="newperson">
-        New Person
+        Neue Person
       </p>
       <p onclick="ShowAddClass()" class="prompt_link" id="newclass">
-        New Class
+        Neue Klasse
       </p>
       <p onclick="ShowAddBooking()" class="prompt_link" id="newbooking">
-        New Booking
+        Neue Lektion
       </p>
-      <p class="highlight_button" onclick="CloseAdd()">Close</p>
+      <p class="highlight_button" onclick="CloseAdd()">Schliessen</p>
     </div>
 
     <form
@@ -124,16 +124,16 @@
       id="addRoom"
       onsubmit="AddRoom(); return false;"
     >
-      <h2>Add Room</h2>
+      <h2>Neuer Raum</h2>
       <input
         type="text"
         id="roomName"
-        placeholder="Room name..."
+        placeholder="Raumname..."
         class="text_input"
       />
       <div class="button_row">
-        <input type="submit" class="highlight_button" value="Create" />
-        <p class="highlight_button" onclick="CloseAddAll()">Close</p>
+        <input type="submit" class="highlight_button" value="Hinzufügen" />
+        <p class="highlight_button" onclick="CloseAddAll()">Schliessen</p>
       </div>
     </form>
 
@@ -142,16 +142,16 @@
       id="addClass"
       onsubmit="AddClass(); return false;"
     >
-      <h2>Add Class</h2>
+      <h2>Neue Klasse</h2>
       <input
         type="text"
         id="className"
-        placeholder="Class name..."
+        placeholder="Klassenname..."
         class="text_input"
       />
       <div class="button_row">
-        <input type="submit" class="highlight_button" value="Create" />
-        <p class="highlight_button" onclick="CloseAddAll()">Close</p>
+        <input type="submit" class="highlight_button" value="Hinzufügen" />
+        <p class="highlight_button" onclick="CloseAddAll()">Schliessen</p>
       </div>
     </form>
 
@@ -160,16 +160,16 @@
       id="addBooking"
       onsubmit="AddBooking(); return false;"
     >
-      <h2>Add Booking</h2>
+      <h2>Neue Lektion</h2>
       <input
         type="text"
         id="subjectName"
-        placeholder="Subject..."
+        placeholder="Lektion..."
         class="text_input"
         required
       />
-      <select id="time" class="selectmenu" name="Time" required>
-        <option selected disabled>Time</option>
+      <select id="time" class="selectmenu" name="Zeit" required>
+        <option selected disabled>Zeit</option>
         <option value="1">07:45 - 08:30</option>
         <option value="2">08:45 - 09:30</option>
         <option value="3">09:45 - 10:30</option>
@@ -180,18 +180,18 @@
         <option value="8">15:45 - 16:30</option>
       </select>
       <select id="day" class="selectmenu" name="Day" required>
-        <option selected disabled>Day</option>
-        <option value="0">Monday</option>
-        <option value="8">Tuesday</option>
-        <option value="16">Wednesday</option>
-        <option value="24">Thursday</option>
-        <option value="32">Friday</option>
+        <option selected disabled>Tag</option>
+        <option value="0">Montag</option>
+        <option value="8">Dienstag</option>
+        <option value="16">Mittwoch</option>
+        <option value="24">Donnerstag</option>
+        <option value="32">Freitag</option>
       </select>
       <select id="classBooking" class="selectmenu" required>
-        <option selected disabled>Class</option>
+        <option selected disabled>Klasse</option>
       </select>
       <select id="room" class="selectmenu" required>
-        <option selected disabled>Room</option>
+        <option selected disabled>Raum</option>
       </select>
       <div class="button_row">
         <input type="submit" class="highlight_button" value="Create" />
@@ -204,10 +204,10 @@
       id="addPerson"
       onsubmit="AddPerson(); return false;"
     >
-      <h2>Add Person</h2>
+      <h2>Neue Person</h2>
       <select id="role" class="selectmenu" onchange="ChangeInput()" required>
-        <option value="student">Student</option>
-        <option value="teacher">Teacher</option>
+        <option value="student">Schüler</option>
+        <option value="teacher">Lehrer</option>
         <option value="admin">Admin</option>
       </select>
       <input
@@ -221,28 +221,28 @@
         type="password"
         id="personPassword"
         class="text_inputperson"
-        placeholder="Password..."
+        placeholder="Passwort..."
         required
       />
       <input
         type="text"
         id="personFirstName"
         class="text_inputperson"
-        placeholder="First Name..."
+        placeholder="Vorname..."
         required
       />
       <input
         type="text"
         id="personLastName"
         class="text_inputperson"
-        placeholder="Last Name..."
+        placeholder="Nachname..."
         required
       />
 
       <select id="class" class="selectmenu" required></select>
       <div class="button_row">
-        <input type="submit" class="highlight_button" value="Create" />
-        <p class="highlight_button" onclick="CloseAddAll()">Close</p>
+        <input type="submit" class="highlight_button" value="Hinzufügen" />
+        <p class="highlight_button" onclick="CloseAddAll()">Schliessen</p>
       </div>
     </form>
 

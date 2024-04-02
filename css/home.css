@@ -212,7 +212,7 @@ td {
   margin-left: 5%;
   margin-right: 5%;
   text-align: center;
-  width: 20%;
+  width: 25%;
   font-size: medium;
 }
 
@@ -301,11 +301,11 @@ td {
 /*----- Error-Box effects -----*/
 
 .flyIn {
-  animation: flyIn 0.5s forwards;
+  animation: flyIn 1s forwards;
 }
 
 .flyOut {
-  animation: flyOut 0.5s forwards;
+  animation: flyOut 1s forwards;
 }
 
 @keyframes flyIn {

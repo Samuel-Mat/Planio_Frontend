@@ -69,10 +69,10 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
     .then((data) => {
       console.log(data);
       if (
-        data == "Class not found." ||
-        data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻"
+        data == "Die Klasse wurde nicht gefunden" ||
+        data == "Ein Schüler mit dieser Email existiert bereits (╯°□°）╯︵ ┻━┻"
       ) {
-        errorBox.innerHTML = "the student could not be added";
+        errorBox.innerHTML = "Schüler konnte nicht hinzugefügt werden.";
         errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
@@ -83,7 +83,7 @@ async function AddStudent(email, firstname, lastname, password, classPerson) {
           errorBox.classList.remove("flyIn");
         }, 2000);
       } else {
-        ShowSuccess("Successfully created new student");
+        ShowSuccess("Schüler wurde erfolgreich hinzugefügt.");
         CloseAddAll();
       }
     });
@@ -107,8 +107,8 @@ async function AddTeacher(email, firstname, lastname, password) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if (data == "A User with this Email already exists (╯°□°）╯︵ ┻━┻") {
-        errorBox.innerHTML = "the teacher could not be added";
+      if (data == "Ein Lehrer mit dieser Email existiert bereits (╯°□°）╯︵ ┻━┻") {
+        errorBox.innerHTML = "Lehrer konnte nicht hinzugefügt werden.";
         errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
@@ -119,7 +119,7 @@ async function AddTeacher(email, firstname, lastname, password) {
           errorBox.classList.remove("flyIn");
         }, 2000);
       } else {
-        ShowSuccess("Successfully created new teacher");
+        ShowSuccess("Lehrer wurde erfolgreich hinzugefügt.");
         CloseAddAll();
       }
     });
@@ -141,8 +141,8 @@ async function AddAdmin(email, password) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if (data == "An Admin with this Email already exists (╯°□°）╯︵ ┻━┻") {
-        errorBox.innerHTML = "the admin could not be added";
+      if (data == "Ein Admin mit dieser Email existiert bereits (╯°□°）╯︵ ┻━┻") {
+        errorBox.innerHTML = "Admin konnte nicht hinzugefügt werden.";
         errorBox.style.top = "-35vh";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
@@ -153,7 +153,7 @@ async function AddAdmin(email, password) {
           errorBox.classList.remove("flyIn");
         }, 2000);
       } else {
-        ShowSuccess("Successfully created new admin");
+        ShowSuccess("Admin wurde erfolgreich hinzugefügt.");
         CloseAddAll();
       }
     });
@@ -177,7 +177,7 @@ async function AddRoom() {
     .then((data) => {
       console.log(data);
       if (data == "Raum wurde erfolgreich hinzugefügt") {
-        ShowSuccess("Successfully created new room");
+        ShowSuccess("Raum wurde erfolgreich hinzugefügt.");
         CloseAddAll();
       } else {
         errorBox.innerHTML = data;
@@ -222,7 +222,7 @@ async function AddBooking() {
       console.log(data);
 
       if (data == "Lesson successfully created") {
-        ShowSuccess("Successfully created new lesson");
+        ShowSuccess("Lektion wurde erfolgreich hinzugefügt.");
         CloseAddAll();
         window.location.reload();
       } else {
@@ -259,7 +259,7 @@ async function AddClass() {
       console.log(data);
 
       if (data == "Class successfully created") {
-        ShowSuccess("Successfully created new class");
+        ShowSuccess("Klasse wurde erfolgreich hinzugefügt.");
         CloseAddAll();
       } else {
         errorBox.innerHTML = data;
