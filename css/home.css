@@ -234,6 +234,21 @@ td {
 
 .prompt_link:hover {
   cursor: pointer;
+  animation-name: promptLinkAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes promptLinkAnimation {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(132, 130, 129);
+  }
+  100% {
+    color: white;
+  }
 }
 
 .selectmenu {
