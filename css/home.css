@@ -298,11 +298,11 @@ td {
 /*----- Error-Box effects -----*/
 
 .flyIn {
-  animation: flyIn 0.5s forwards;
+  animation: flyIn 1s forwards;
 }
 
 .flyOut {
-  animation: flyOut 0.5s forwards;
+  animation: flyOut 1s forwards;
 }
 
 @keyframes flyIn {
