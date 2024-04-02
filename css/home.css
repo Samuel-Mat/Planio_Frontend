@@ -276,7 +276,7 @@ td {
   background-color: rgb(169, 22, 22);
   border-radius: 2rem;
   width: 27vw;
-  height: 23vh;
+  height: 10vh;
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -320,7 +320,7 @@ td {
   background-color: rgb(1, 188, 29);
   border-radius: 2rem;
   width: 27vw;
-  height: 5vh;
+  height: 10vh;
   margin-top: 1vh;
   padding: 2rem;
   position: absolute;
