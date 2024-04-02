@@ -180,7 +180,7 @@ async function AddRoom() {
         ShowSuccess("Successfully created new room");
         CloseAddAll();
       } else {
-        errorBox.innerHTML = "the room could not be created";
+        errorBox.innerHTML = data;
         errorBox.style.right = "-35vw";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
@@ -224,8 +224,9 @@ async function AddBooking() {
       if (data == "Lesson successfully created") {
         ShowSuccess("Successfully created new lesson");
         CloseAddAll();
+        window.location.reload();
       } else {
-        errorBox.innerHTML = "the lesson could not be created";
+        errorBox.innerHTML = data;
         errorBox.style.right = "-35vw";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
@@ -261,7 +262,7 @@ async function AddClass() {
         ShowSuccess("Successfully created new class");
         CloseAddAll();
       } else {
-        errorBox.innerHTML = "the class could not be added";
+        errorBox.innerHTML = data;
         errorBox.style.right = "-35vw";
         errorBox.classList.remove("flyOut");
         errorBox.classList.add("flyIn");
