@@ -59,6 +59,7 @@ async function ShowAddPerson() {
   console.log(classes[0]);
   const addRoomPrompt = document.getElementById("addPerson");
   const classList = document.getElementById("class");
+  classList.innerHTML = "";
 
   for (let i = 0; i < classes.length; i++) {
     const option = document.createElement("option");
