@@ -50,7 +50,7 @@ function login(emailInput, passwordInput) {
     .then((response) => response.text())
     .then((data) => {
       console.log(data);
-      if (data == "You forgot the username or password. (╯°□°）╯︵ ┻━┻" || data == "Username or Password is wrong (╯°□°）╯︵ ┻━┻") {
+      if (data == "Benutzername oder Passwort falsch (╯°□°）╯︵ ┻━┻") {
         jwt = null;
         errorBox.style.right = "-27vw";
         errorBox.classList.remove("flyOut");
