@@ -267,8 +267,11 @@ td {
   0% {
     background-color: rgb(68, 66, 66);
   }
-  100% {
+  50% {
     background-color: rgb(121, 114, 110);
+  }
+  100% {
+    background-color: rgb(68, 66, 66);
   }
 }
 
