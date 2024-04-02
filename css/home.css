@@ -4,6 +4,9 @@
   align-items: center;
 }
 
+.logo {
+  width: 15vw;
+}
 body {
   width: 100vw;
   overflow: hidden;
