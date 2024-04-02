@@ -2,6 +2,10 @@ let jwt = sessionStorage.getItem("token");
 let errorBox = document.getElementById("errorBox");
 let successBox = document.getElementById("successBox");
 
+if(jwt == null) {
+  window.location.href = "login.html";
+}
+
 fetch(url + "User/GetRole", {
   method: "GET",
   headers: {
