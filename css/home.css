@@ -191,10 +191,6 @@ td {
   border-radius: 20px;
 }
 
-.add_booking:hover {
-  cursor: pointer;
-}
-
 .button_row {
   display: flex;
   flex-direction: row;
@@ -290,3 +286,52 @@ td {
 }
 
 /*----- Error-Box effects -----*/
+
+.success-box {
+  background-color: rgb(1, 188, 29);
+  border-radius: 2rem;
+  width: 27vw;
+  height: 5vh;
+  margin-top: 1vh;
+  padding: 2rem;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 5;
+  transition: 0.2s;
+  color: white;
+  text-align: center;
+  font-size: 3.5vh;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  animation-name: infoboxes;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.success-box h2 {
+  background-color: rgb(1, 188, 29);
+  font-size: large;
+}
+
+.success-box p {
+  background-color: rgb(1, 188, 29);
+  font-size: medium;
+}
+
+.flyInSuccess {
+  animation: successBoxAnimation 2.5s forwards;
+}
+
+@keyframes successBoxAnimation {
+  0% {
+    top: -20%;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: -20%;
+  }
+}
