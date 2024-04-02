@@ -215,6 +215,21 @@ td {
 
 .highlight_button:hover {
   cursor: pointer;
+  animation-name: promptButtonAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes promptButtonAnimation {
+  0% {
+    border-color: rgb(68, 66, 66);
+  }
+  50% {
+    border-color: rgb(132, 130, 129);
+  }
+  100% {
+    border-color: rgb(68, 66, 66);
+  }
 }
 
 .prompt_link:hover {
@@ -321,7 +336,7 @@ td {
 }
 
 .flyInSuccess {
-  animation: successBoxAnimation 2.5s forwards;
+  animation: successBoxAnimation 3s forwards;
 }
 
 @keyframes successBoxAnimation {

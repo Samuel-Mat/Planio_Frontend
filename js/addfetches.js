@@ -291,5 +291,5 @@ function ShowSuccess(textMessage) {
   successBox.classList.add("flyInSuccess");
   setTimeout(() => {
     successBox.classList.remove("flyInSuccess");
-  }, 2500);
+  }, 3000);
 }
