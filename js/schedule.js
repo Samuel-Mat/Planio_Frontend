@@ -66,8 +66,8 @@ function AddLessonsToSchedule(lessons) {
     let time = lessons[i].lessonTime - day * 8;
     let fields = rows[time - 1].querySelectorAll("th");
     const field = fields[day + 1];
-
-    field.textContent = `${lessons[i].lessonName} | ${lessons[i].roomName}`;
+    console.log(lessons);
+    field.textContent = `${lessons[i].lessonName} | ${lessons[i].roomName} | ${lessons[i].attendingClassName}`;
   }
 }
 
