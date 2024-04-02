@@ -320,9 +320,6 @@ td {
   font-size: 3.5vh;
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
-  animation-name: infoboxes;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
 }
 
 .success-box h2 {
