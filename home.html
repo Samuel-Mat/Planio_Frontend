@@ -164,8 +164,9 @@
         id="subjectName"
         placeholder="Subject..."
         class="text_input"
+        required
       />
-      <select id="time" class="selectmenu" name="Time">
+      <select id="time" class="selectmenu" name="Time" required>
         <option selected disabled>Time</option>
         <option value="1">07:45 - 08:30</option>
         <option value="2">08:45 - 09:30</option>
@@ -176,7 +177,7 @@
         <option value="7">14:45 - 15:30</option>
         <option value="8">15:45 - 16:30</option>
       </select>
-      <select id="day" class="selectmenu" name="Day">
+      <select id="day" class="selectmenu" name="Day" required>
         <option selected disabled>Day</option>
         <option value="0">Monday</option>
         <option value="8">Tuesday</option>
@@ -184,10 +185,10 @@
         <option value="24">Thursday</option>
         <option value="32">Friday</option>
       </select>
-      <select id="classBooking" class="selectmenu">
+      <select id="classBooking" class="selectmenu" required>
         <option selected disabled>Class</option>
       </select>
-      <select id="room" class="selectmenu">
+      <select id="room" class="selectmenu" required>
         <option selected disabled>Room</option>
       </select>
       <div class="button_row">
@@ -202,7 +203,7 @@
       onsubmit="AddPerson(); return false;"
     >
       <h2>Add Person</h2>
-      <select id="role" class="selectmenu" onchange="ChangeInput()">
+      <select id="role" class="selectmenu" onchange="ChangeInput()" required>
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
         <option value="admin">Admin</option>
@@ -212,27 +213,31 @@
         id="personEmail"
         class="text_inputperson"
         placeholder="Email..."
+        required
       />
       <input
         type="password"
         id="personPassword"
         class="text_inputperson"
         placeholder="Password..."
+        required
       />
       <input
         type="text"
         id="personFirstName"
         class="text_inputperson"
         placeholder="First Name..."
+        required
       />
       <input
         type="text"
         id="personLastName"
         class="text_inputperson"
         placeholder="Last Name..."
+        required
       />
 
-      <select id="class" class="selectmenu"></select>
+      <select id="class" class="selectmenu" required></select>
       <div class="button_row">
         <input type="submit" class="highlight_button" value="Create" />
         <p class="highlight_button" onclick="CloseAddAll()">Close</p>
