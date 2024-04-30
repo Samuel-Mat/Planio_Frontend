@@ -97,7 +97,8 @@ td {
   visibility: hidden;
   flex-direction: column;
   width: 30vw;
-  height: 35vh;
+  height: auto;
+  padding: 20px;
   border-color: white;
   border-radius: 1px;
   border-style: solid;
@@ -119,7 +120,8 @@ td {
   visibility: hidden;
   flex-direction: column;
   width: 30vw;
-  height: 20vh;
+  height: auto;
+  padding: 20px;
   border-color: white;
   border-radius: 1px;
   border-style: solid;
@@ -141,7 +143,8 @@ td {
   visibility: hidden;
   flex-direction: column;
   width: 30vw;
-  height: 20vh;
+  height: auto;
+  padding: 20px;
   border-color: white;
   border-radius: 1px;
   border-style: solid;
@@ -159,7 +162,8 @@ td {
   visibility: hidden;
   flex-direction: column;
   width: 30vw;
-  height: 40vh;
+  height: auto;
+  padding: 20px;
   border-color: white;
   border-radius: 1px;
   border-style: solid;
@@ -181,7 +185,8 @@ td {
   visibility: hidden;
   flex-direction: column;
   width: 30vw;
-  height: 39vh;
+  height: auto;
+  padding: 20px;
   border-color: white;
   border-radius: 1px;
   border-style: solid;
